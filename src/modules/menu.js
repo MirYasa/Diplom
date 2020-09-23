@@ -10,8 +10,6 @@ const menu = () => {
     document.addEventListener('click', (event) => {
         const target = event.target;
 
-        console.log(target);
-
         if (target.matches('.menu-btn-img')) {
             popupMenu.style.display = 'flex';
 
