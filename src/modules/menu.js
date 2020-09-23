@@ -17,12 +17,12 @@ const menu = () => {
             popupMenu.style.display = 'none';
 
         } else if (target.closest('.club-select')) {
-            clubsList.classList.toggle('hidden');
+            clubsList.classList.remove('hidden');
 
         } else if (target.closest('.free-visit') || target.matches('.open-popup')) {
             freeVisitForm.style.display = 'block';
 
-        } else if (target.matches('.overlay') || target.matches('.close_icon')) {
+        } else if (target.matches('.overlay') || target.matches('.close_icon') || target.matches('.close-btn')) {
             freeVisitForm.style.display = 'none';
             callbackForm.style.display = 'none';
             gift.style.display = 'none';
@@ -35,11 +35,7 @@ const menu = () => {
             gift.style.display = 'block';
 
         } else if (!target.closest('.club-select')) {
-
-            if (!clubsList.classList.contains('hidden')) {
-                clubsList.classList.add('hidden');
-            }
-
+            clubsList.classList.add('hidden');
         }
     });
 };
