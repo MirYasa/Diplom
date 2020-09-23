@@ -16,8 +16,8 @@ const menu = () => {
         } else if (target.matches('.close-btn-img') || target.closest('.scroll')) {
             popupMenu.style.display = 'none';
 
-        } else if (target.closest('.club-select')) {
-            clubsList.classList.remove('hidden');
+        } else if (target.matches('.club-select p')) {
+            clubsList.classList.toggle('hidden');
 
         } else if (target.closest('.free-visit') || target.matches('.open-popup')) {
             freeVisitForm.style.display = 'block';

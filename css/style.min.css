@@ -996,7 +996,8 @@ header .head .left {
 }
 
 header .head .club-select .clubs-list {
-    position: relative
+    position: relative;
+    z-index: 5555;
 }
 
 header .head .club-select .clubs-list p {
