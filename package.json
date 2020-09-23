@@ -1,0 +1,25 @@
+{
+  "name": "Diplom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MirYasa/Diplom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MirYasa/Diplom/issues"
+  },
+  "homepage": "https://github.com/MirYasa/Diplom#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
