@@ -53,24 +53,24 @@
                 <li class="scroll"><a href="#clubs">Клубы</a></li>
                 <li class="scroll"><a href="#services">Услуги</a></li>
                 <li class="scroll"><a href="#cards">Клубные карты</a></li>
-                <li class=""><a href="#table">Расписание</a></li>
+                <li class="scroll"><a href="#table">Расписание</a></li>
                 <li class="scroll"><a href="#gallery">Галерея</a></li>
                 <li class="scroll"><a href="#footer">Контакты</a></li>
             </ul>
             <div class="menu-button hidden-large">
-                <img src="images/menu-button.png" alt="">
+                <img src="images/menu-button.png" class="menu-btn-img" alt="">
             </div>
         </div>
     </nav>
     <nav class="popup-menu hidden-large">
         <div class="close-menu-btn">
-            <img src="images/delete.png" alt="">
+            <img src="images/delete.png" class="close-btn-img" alt="">
         </div>
         <ul>
             <li class="scroll"><a href="#clubs">Клубы</a></li>
             <li class="scroll"><a href="#services">Услуги</a></li>
             <li class="scroll"><a href="#cards">Клубные карты</a></li>
-            <li class=""><a href="#table">Расписание</a></li>
+            <li class="scroll"><a href="#table">Расписание</a></li>
             <li class="scroll"><a href="#gallery">Галерея</a></li>
             <li class="scroll"><a href="#footer">Контакты</a></li>
         </ul>
@@ -325,7 +325,17 @@
     <div class="gallery-bg">
         <div class="wrapper">
             <div class="gallery-slider">
-                <div class="slide">
+                <div class="slider-arrow prev">
+                    <span>
+                        <img src="./images/arrow-left.png" alt="">
+                    </span>
+                </div>
+                <div class="slider-arrow next">
+                    <span>
+                        <img src="./images/arrow-right.png" alt="">
+                    </span>
+                </div>
+                <div class="slide slide-change">
                     <img src="images/gallery/photo1.jpg" alt="">
                 </div>
                 <div class="slide">
@@ -340,6 +350,7 @@
                 <div class="slide">
                     <img src="images/gallery/photo5.jpg" alt="">
                 </div>
+                <ul class="slider-dots"></ul>
             </div>
         </div>
     </div>
