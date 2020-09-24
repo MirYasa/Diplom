@@ -122,6 +122,10 @@ q:after {
     content: none
 }
 
+.block {
+    display: block;
+}
+
 a {
     margin: 0;
     padding: 0;
@@ -1396,17 +1400,18 @@ nav.popup-menu .close-menu-btn img {
     float: left
 }
 
-.slider-dots li button {
+.slider-dots li {
     width: 22px;
     height: 4px;
     background-color: #fff;
     border: none;
     border-radius: 2px;
     color: transparent;
-    margin-right: 5px
+    margin-right: 5px;
+    cursor: pointer;
 }
 
-.slider-dots li.slick-active button {
+.slider-dots li.slick-active {
     background-color: #ffd11a
 }
 
@@ -1602,7 +1607,7 @@ nav.popup-menu .close-menu-btn img {
 }
 
 #gallery {
-    background-color: #fff
+    background-color: #fff;
 }
 
 #gallery .gallery-bg {
@@ -1613,21 +1618,35 @@ nav.popup-menu .close-menu-btn img {
     padding-left: 75px;
     padding-right: 75px;
     max-width: 900px;
+    height: 400px;
     margin: 0 auto;
-    text-align: center
+    text-align: center;
+    position: relative;
 }
 
 #gallery .gallery-slider .slide {
-    margin: 0 auto !important;
-    width: 100%
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s
+}
+
+#gallery .gallery-slider .slide-change {
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
 }
 
 #gallery .gallery-slider .slider-arrow {
-    position: absolute;
     top: 50%;
     margin-top: -18px;
     z-index: 100;
-    cursor: pointer
+    cursor: pointer;
+    position: absolute;
 }
 
 #gallery .gallery-slider .slider-arrow span {
@@ -1641,11 +1660,11 @@ nav.popup-menu .close-menu-btn img {
 }
 
 #gallery .gallery-slider .slider-arrow.prev {
-    left: 0
+    left: 0;
 }
 
 #gallery .gallery-slider .slider-arrow.next {
-    right: 0
+    right: 0;
 }
 
 #gallery .gallery-slider .slider-dots {
