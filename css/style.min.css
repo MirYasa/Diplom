@@ -1548,14 +1548,15 @@ nav.popup-menu .close-menu-btn img {
     display: flex;
     margin: 0 auto;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
+    position: relative;
 }
 
 .services-slider .slide {
     text-align: center;
     margin-right: 6px;
     margin-left: 6px;
-    width: 210px
+    width: 210px;
 }
 
 .services-slider .slide img {
