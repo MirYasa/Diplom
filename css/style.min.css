@@ -961,7 +961,7 @@ header {
 header .head {
     background: url(../images/head-bg.jpg) no-repeat center top;
     background-size: cover;
-    width: 100%
+    width: 100%;
 }
 
 header .head .head-main {
@@ -1123,7 +1123,7 @@ header nav.top-menu {
     min-height: 50px;
     background-color: #000;
     background-image: -webkit-gradient(linear, left top, right top, from(#230a16), to(#0c0b15));
-    background-image: linear-gradient(to right, #230a16 0%, #0c0b15 100%)
+    background-image: linear-gradient(to right, #230a16 0%, #0c0b15 100%);
 }
 
 header nav.top-menu .menu-button {
@@ -2089,7 +2089,8 @@ footer .footer-bottom .right .socials .social-icon:hover a {
 }
 
 .popup {
-    display: none
+    display: none;
+    z-index: 1;
 }
 
 .popup .overlay {
