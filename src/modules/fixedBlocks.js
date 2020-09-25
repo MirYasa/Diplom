@@ -13,11 +13,13 @@ const fixedBlocks = () => {
             totop.style.display = 'none';
         }
 
-        if (menuButton.getBoundingClientRect().y < 0) {
-            topMenu.style.position = 'fixed';
-        }
-        if (headSlider.getBoundingClientRect().y > 0) {
-            topMenu.style.position = 'relative';
+        if (document.documentElement.clientWidth < 768) {
+            if (menuButton.getBoundingClientRect().y < 0) {
+                topMenu.style.position = 'fixed';
+            }
+            if (headSlider.getBoundingClientRect().y > 0) {
+                topMenu.style.position = 'relative';
+            }
         }
     });
 };

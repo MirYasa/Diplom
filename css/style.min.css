@@ -1116,7 +1116,7 @@ header .head .call .btn {
 }
 
 header nav.top-menu {
-    z-index: 4444;
+    z-index: 400;
     top: 0;
     left: 0;
     width: 100%;
@@ -2090,7 +2090,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
 
 .popup {
     display: none;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .popup .overlay {
