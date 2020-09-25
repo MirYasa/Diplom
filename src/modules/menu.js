@@ -22,12 +22,12 @@ const menu = () => {
         } else if (target.closest('.free-visit') || target.matches('.open-popup')) {
             freeVisitForm.style.display = 'block';
 
+        } else if (target.closest('#gift .overlay') || target.closest('#gift .close_icon') || target.closest('.close-btn')) {
+            gift.style.display = 'none';
+
         } else if (target.matches('.overlay') || target.matches('.close_icon')) {
             freeVisitForm.style.display = 'none';
             callbackForm.style.display = 'none';
-
-        } else if (target.matches('#gift .overlay') || target.closest('#gift .close_icon') || target.matches('.close-btn')) {
-            gift.style.display = 'none';
 
         } else if (target.closest('.callback-btn')) {
             callbackForm.style.display = 'block';
