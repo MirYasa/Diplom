@@ -1,10 +1,12 @@
+/* eslint-disable max-len */
 const menu = () => {
     const clubsList = document.querySelector('.clubs-list ul'),
         popupMenu = document.querySelector('.popup-menu'),
         freeVisitForm = document.querySelector('#free_visit_form'),
         callbackForm = document.querySelector('#callback_form'),
         fixedGift = document.querySelector('.fixed-gift'),
-        gift = document.querySelector('#gift');
+        gift = document.querySelector('#gift'),
+        thanks = document.querySelector('#thanks');
 
 
     document.addEventListener('click', (event) => {
@@ -22,10 +24,13 @@ const menu = () => {
         } else if (target.closest('.free-visit') || target.matches('.open-popup')) {
             freeVisitForm.style.display = 'block';
 
-        } else if (target.closest('#gift .overlay') || target.closest('#gift .close_icon') || target.closest('.close-btn')) {
+        } else if (target.closest('#gift .overlay') || target.closest('#gift .close_icon') || target.closest('#gift .close-btn')) {
             gift.style.display = 'none';
 
-        } else if (target.matches('.overlay') || target.matches('.close_icon')) {
+        } else if (target.closest('#thanks .overlay') || target.closest('#thanks .close_icon') || target.closest('#thanks .close-btn')) {
+            thanks.style.display = 'none';
+
+        } else if (target.matches('.overlay') || target.matches('.close_icon') || target.closest('.close-btn')) {
             freeVisitForm.style.display = 'none';
             callbackForm.style.display = 'none';
 
