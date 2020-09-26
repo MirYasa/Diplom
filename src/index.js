@@ -10,7 +10,7 @@ import fixedBlocks from './modules/fixedBlocks';
 import sendForms from './modules/sendForms';
 import validForms from './modules/validFoms';
 
-validForms();
+validForms('.phone');
 sendForms();
 fixedBlocks();
 calculator();
