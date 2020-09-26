@@ -29,7 +29,7 @@ const menu = () => {
             freeVisitForm.style.display = 'none';
             callbackForm.style.display = 'none';
 
-        } else if (target.closest('.callback-btn')) {
+        } else if (target.closest('header .callback-btn')) {
             callbackForm.style.display = 'block';
 
         } else if (target.closest('.fixed-gift')) {
