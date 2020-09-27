@@ -1854,7 +1854,10 @@ nav.popup-menu .close-menu-btn img {
 }
 
 .club input[type=radio] {
-    display: none
+    display: block;
+    position: absolute;
+    left: 576px;
+    opacity: 0;
 }
 
 .club input[type=radio]:not(checked)+label:before {
