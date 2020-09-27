@@ -45,6 +45,8 @@ function valid(selector, masked = '+7 (___) ___-__-__') {
             } else {
                 target.setCustomValidity('');
             }
+        } else if (target.type === 'text' && target.closest('.price-message')) {
+            return;
         } else if (target.type === 'text') {
             target.value = target.value.replace(/[^а-я]/gi, '');
         }
