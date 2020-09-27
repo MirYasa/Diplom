@@ -29,6 +29,8 @@ const menu = () => {
 
         } else if (target.closest('#thanks .overlay') || target.closest('#thanks .close_icon') || target.closest('#thanks .close-btn')) {
             thanks.style.display = 'none';
+            freeVisitForm.style.display = 'none';
+            callbackForm.style.display = 'none';
 
         } else if (target.matches('.overlay') || target.matches('.close_icon') || target.closest('.close-btn')) {
             freeVisitForm.style.display = 'none';

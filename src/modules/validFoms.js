@@ -37,9 +37,17 @@ function valid(selector, masked = '+7 (___) ___-__-__') {
     }
 
     document.addEventListener('input', (event) => {
-        const target = event.target;
+        const target = event.target,
+            label = target.querySelector('.personal-data');
+        let count = 0;
 
-        if (target.type === 'text') {
+        if (target.type === 'tel') {
+            if (target.value.length < 18) {
+                target.setCustomValidity('Введите корректный номер телефона');
+            } else {
+                target.setCustomValidity('');
+            }
+        } else if (target.type === 'text') {
             target.value = target.value.replace(/[^а-я]/gi, '');
         }
     });

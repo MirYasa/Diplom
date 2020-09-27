@@ -2,52 +2,59 @@ const sendForms = () => {
     const loadMessage = 'Загрузка...',
         errorMessage = 'Что-то пошло не так',
         statussMessage = document.createElement('div'),
+        freeVisitForm = document.querySelector('#free_visit_form'),
+        callbackForm = document.querySelector('#callback_form'),
         thanks = document.querySelector('#thanks');
 
     document.addEventListener('submit', (event) => {
         event.preventDefault();
-        const target = event.target;
+        const target = event.target,
+            inputs = target.querySelectorAll('input');
 
         target.append(statussMessage);
         statussMessage.style.cssText = `font-size: 2em; color: #ffffff;`;
 
+        const formData = new FormData(target),
+            body = {};
+        formData.forEach((val, key) => {
+            body[key] = val;
+        });
+
+        console.log(target);
+
         const postData = (body) => {
             return fetch('./server.php', {
                 method: 'POST',
-                body: new FormData(body)
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
             });
         };
         statussMessage.textContent = loadMessage;
 
-        postData(target)
+        postData(body)
             .then((response) => {
                 if (response.status === 200) {
+                    inputs.forEach((input) => {
+                        input.value = '';
+                    });
 
-                    if (target.closest('.popup')) {
-                        target.innerHTML = `     
-                    <div class="overlay">
-                    </div>
-                    <div class="form-wrapper">
-                        <div class="close-form">
-                            <img src="images/close-icon.png" alt="close" class="close_icon">
-                        </div>
-                        <div class="form-content" style="color: #ffffff; font-size: 1.5em;">
-                            <h4>Спасибо!</h4>
-                            <p>Ваша заявка отправлена. <br> Мы свяжемся с вами в ближайшее время.</p>
-                            <button class="btn close-btn">OK</button>
-                        </div>
-                    </div>`;
-                        statussMessage.textContent = '';
-                    } else {
-                        thanks.style.display = 'block';
-                        statussMessage.textContent = '';
-                    }
+                    thanks.style.display = 'block';
+                    statussMessage.textContent = '';
+                    setTimeout(() => {
+                        thanks.style.display = 'none';
+                        freeVisitForm.style.display = 'none';
+                        callbackForm.style.display = 'none';
+                    }, 3000);
+
                 }
             })
             .catch(() => {
                 statussMessage.textContent = errorMessage;
             });
     });
+
 };
 
 export default sendForms;

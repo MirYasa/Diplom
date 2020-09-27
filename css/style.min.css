@@ -1001,7 +1001,7 @@ header .head .left {
 
 header .head .club-select .clubs-list {
     position: relative;
-    z-index: 5555;
+    z-index: 55;
 }
 
 header .head .club-select .clubs-list p {
@@ -1751,7 +1751,9 @@ nav.popup-menu .close-menu-btn img {
 }
 
 #card_order p.personal-data input[type=checkbox] {
-    display: none
+    position: absolute;
+    top: -10px;
+    left: -240px;
 }
 
 #card_order p.personal-data label {
@@ -1786,6 +1788,13 @@ nav.popup-menu .close-menu-btn img {
     position: absolute;
     top: -3px;
     left: -29px
+}
+
+#banner-form input[type='checkbox'] {
+    display: block;
+    position: absolute;
+    top: -12px;
+    left: 270px;
 }
 
 #card_order input {
@@ -2218,7 +2227,11 @@ p.personal-data label {
 }
 
 p.personal-data input[type='checkbox'] {
-    display: none
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 70px;
+    opacity: 0;
 }
 
 p.personal-data input[type=checkbox]:not(checked)+label:before {
@@ -2467,7 +2480,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
     }
 
     #banner-form input[type='checkbox'] {
-        display: none
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 3000px;
     }
 
     #banner-form p.personal-data {
