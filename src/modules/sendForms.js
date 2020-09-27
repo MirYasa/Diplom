@@ -20,8 +20,6 @@ const sendForms = () => {
             body[key] = val;
         });
 
-        console.log(target);
-
         const postData = (body) => {
             return fetch('./server.php', {
                 method: 'POST',

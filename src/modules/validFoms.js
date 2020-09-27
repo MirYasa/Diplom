@@ -37,9 +37,7 @@ function valid(selector, masked = '+7 (___) ___-__-__') {
     }
 
     document.addEventListener('input', (event) => {
-        const target = event.target,
-            label = target.querySelector('.personal-data');
-        let count = 0;
+        const target = event.target;
 
         if (target.type === 'tel') {
             if (target.value.length < 18) {
