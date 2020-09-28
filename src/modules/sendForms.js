@@ -9,7 +9,8 @@ const sendForms = () => {
     document.addEventListener('submit', (event) => {
         event.preventDefault();
         const target = event.target,
-            inputs = target.querySelectorAll('input');
+            inputs = target.querySelectorAll('input'),
+            radio = [];
 
         target.append(statussMessage);
         statussMessage.style.cssText = `font-size: 2em; color: #ffffff;`;
@@ -36,8 +37,11 @@ const sendForms = () => {
                 if (response.status === 200) {
                     inputs.forEach((input) => {
                         input.value = '';
-                        if (input.type === 'checkbox' || input.type === 'radio') {
+                        if (input.type === 'checkbox') {
                             input.checked = false;
+                        } else if (input.type === 'radio') {
+                            radio.push(input);
+                            radio[0].checked = true;
                         }
                     });
 
