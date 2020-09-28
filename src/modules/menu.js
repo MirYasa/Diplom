@@ -33,6 +33,21 @@ const menu = () => {
             callbackForm.style.display = 'none';
 
         } else if (target.matches('.overlay') || target.matches('.close_icon') || target.closest('.close-btn')) {
+            const inputsFree = freeVisitForm.querySelectorAll('input'),
+                inputsCall = callbackForm.querySelectorAll('input');
+
+            inputsFree.forEach((input) => {
+                input.value = '';
+                if (input.type === 'checkbox') {
+                    input.checked = false;
+                }
+            });
+            inputsCall.forEach((input) => {
+                input.value = '';
+                if (input.type === 'checkbox') {
+                    input.checked = false;
+                }
+            });
             freeVisitForm.style.display = 'none';
             callbackForm.style.display = 'none';
 

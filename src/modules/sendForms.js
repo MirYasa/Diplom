@@ -36,6 +36,9 @@ const sendForms = () => {
                 if (response.status === 200) {
                     inputs.forEach((input) => {
                         input.value = '';
+                        if (input.type === 'checkbox' || input.type === 'radio') {
+                            input.checked = false;
+                        }
                     });
 
                     thanks.style.display = 'block';
