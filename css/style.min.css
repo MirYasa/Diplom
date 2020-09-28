@@ -1001,7 +1001,7 @@ header .head .left {
 
 header .head .club-select .clubs-list {
     position: relative;
-    z-index: 400;
+    z-index: 1000;
 }
 
 header .head .club-select .clubs-list p {
