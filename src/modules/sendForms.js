@@ -4,7 +4,8 @@ const sendForms = () => {
         statussMessage = document.createElement('div'),
         freeVisitForm = document.querySelector('#free_visit_form'),
         callbackForm = document.querySelector('#callback_form'),
-        thanks = document.querySelector('#thanks');
+        thanks = document.querySelector('#thanks'),
+        priceTotal = document.querySelector('#price-total');
 
     document.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -36,15 +37,18 @@ const sendForms = () => {
             .then((response) => {
                 if (response.status === 200) {
                     inputs.forEach((input) => {
-                        input.value = '';
-                        if (input.type === 'checkbox') {
+                        if (input.type === 'hidden') {
+                            return;
+                        } else if (input.type === 'checkbox') {
                             input.checked = false;
                         } else if (input.type === 'radio') {
                             radio.push(input);
                             radio[0].checked = true;
+                        } else {
+                            input.value = '';
                         }
                     });
-
+                    priceTotal.textContent = 1999;
                     thanks.style.display = 'block';
                     statussMessage.textContent = '';
                     setTimeout(() => {
